@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#111627" />
+  <meta name="description" content="Explore a source-grounded knowledge assistant with transparent retrieval and optional local AI." />
+  <title>Knowledge Agent — Braxly</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+  <script type="module" src="src/app.js"></script>
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <a class="brand" href="https://github.com/braxlyco"><span class="brand-icon">B<span>.</span></span><span>BRAXLY<small>KNOWLEDGE LAB / 003</small></span></a>
+      <div class="sidebar-kicker">THE WORKSPACE</div>
+      <button class="side-link active" type="button"><span>✦</span> Ask the knowledge base</button>
+      <div class="sidebar-kicker source-label">LOADED SOURCES</div>
+      <div id="sidebar-sources" class="sidebar-sources"></div>
+      <div class="sidebar-bottom"><div class="privacy-dot">● &nbsp;BROWSER-FIRST DEMO</div><p>Sample documents are fictional. Added files stay in this browser session unless you choose local Ollama mode.</p><a href="https://github.com/braxlyco/knowledge-agent" target="_blank" rel="noopener noreferrer">Explore the code ↗</a></div>
+    </aside>
+
+    <main>
+      <header class="topbar"><div>BRAXLY <span>/</span> Knowledge Agent</div><a href="mailto:contactbraxly@gmail.com?subject=Knowledge%20agent%20project">Build this for my team ↗</a></header>
+      <div class="content">
+        <div class="hero"><div><div class="eyebrow"><span></span> KNOWLEDGE, WITHOUT THE GUESSWORK</div><h1>Answers with<br /><em>receipts.</em></h1><p>Ask your documents a question. See the relevant passages, the answer they support, and where a person should step in.</p></div><div class="hero-art" aria-hidden="true"><div class="paper p1"><span></span><span></span><span></span></div><div class="paper p2"><span></span><span></span><span></span></div><div class="art-search">⌕</div><div class="art-check">✓</div></div></div>
+        <div class="mode-bar"><div><span class="mode-dot"></span><strong id="mode-title">Retrieval demo</strong><span id="mode-description">Evidence is selected in your browser; no AI model is called.</span></div><button id="mode-button" type="button" hidden>Use local AI</button></div>
+        <section class="ask-section"><div class="section-head"><span>01 / ASK A QUESTION</span><strong>Try a question or write your own</strong></div><div id="examples" class="examples"></div><form id="ask-form"><label for="question" class="sr-only">Ask a question about the loaded sources</label><input id="question" maxlength="500" required placeholder="Ask about a policy, procedure, or customer request..." autocomplete="off" /><button type="submit" id="ask-button">Ask agent <span>→</span></button></form><p id="notice" role="status">Start with the fictional documents, or add your own text file.</p></section>
+        <div class="work-grid"><section class="answer-card" aria-live="polite"><div class="card-head"><div><span>02 / GROUNDED ANSWER</span><h2>What the sources say</h2></div><span id="answer-mode" class="answer-mode">RETRIEVAL PREVIEW</span></div><div id="answer-content" class="answer-content"><div class="empty-icon">◇</div><p>Ask a question to see an answer with its sources.</p></div><div class="answer-foot"><span>Answers need human review before real-world use.</span><button id="copy-button" type="button" disabled>Copy answer</button></div></section>
+          <aside class="evidence-card"><div class="card-head"><div><span>03 / EVIDENCE</span><h2>Source passages</h2></div><span id="source-count" class="count">0</span></div><div id="evidence-list" class="evidence-list"><p>Relevant passages appear here after a question.</p></div><div class="upload-zone"><label for="file-input">+ Add a .txt or .md file</label><input id="file-input" type="file" accept=".txt,.md,text/plain,text/markdown" multiple /><small>Processed locally in this session. Up to 5 files.</small><button id="reset-button" type="button">Reset sample sources</button></div></aside></div>
+        <footer><span>BRAXLY / KNOWLEDGE LAB</span><p>Make the right information easier to find.</p><a href="mailto:contactbraxly@gmail.com?subject=Knowledge%20agent%20project">Discuss your use case ↗</a></footer>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
